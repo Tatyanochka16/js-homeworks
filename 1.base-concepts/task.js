@@ -2,16 +2,17 @@
 
 function solveEquation(a, b, c) {
 	let arr = [];
-	let discriminant = Math.pow(b, 2) - 4 * a * c;
-	if (discriminant < 0) {
-		arr = [];
-	} else if (discriminant = 0) {
-		let result = -b / (2 * a);
+	let d = Math.pow(b, 2) - 4 * a * c;
+
+	if (d === 0) {
+		let result = (-b) / (2 * a);
 		arr.push(result);
-	} else {
-		let result_1 = (-b + Math.sqrt(discriminant)) / (2 * a);
-		let result_2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+	} else if (d > 0) {
+		let result_1 = ((-b) + Math.sqrt(d)) / (2 * a);
+		let result_2 = ((-b) - Math.sqrt(d)) / (2 * a);
 		arr.push(result_1, result_2);
+	} else {
+		arr = [];
 	}
 	return arr;
 }
